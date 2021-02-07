@@ -6,10 +6,7 @@ import (
 )
 
 func main() {
-	doWork := func(
-		done <-chan interface{},
-		strings <-chan string,
-	) <-chan interface{} { // <1>
+	doWork := func(done <-chan interface{}, strings <-chan string) <-chan interface{} { // <1>
 		terminated := make(chan interface{})
 		go func() {
 			defer fmt.Println("doWork exited.")

@@ -1,6 +1,6 @@
 package main
 
-import ()
+import "fmt"
 
 func main() {
 	doWork := func(strings <-chan string) <-chan interface{} {
@@ -11,6 +11,7 @@ func main() {
 			for s := range strings {
 				// Do something interesting
 				fmt.Println(s)
+
 			}
 		}()
 		return completed
